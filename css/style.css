@@ -1,0 +1,506 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-size: cover;
+    background-image: url(../assets/ws_Mountains_Trees_&_Hilly_Road_2560x1600.jpg);
+    min-height: 100vh;
+}
+
+/*Agregamos estilo para el header*/
+
+header{
+    width: 100%;
+    overflow: visible;
+    background: #252932;
+    margin-bottom: 20px;
+    position: fixed;
+}
+
+header .logo{
+    font-family: Montserrat Alternates;
+    color: #ffffff;
+    font-size: 200px;
+    line-height: 200px;
+    float: left;
+}
+
+header nav{
+    float: right;
+    line-height: 200px;    
+}
+
+header nav a{
+    display: inline-block;
+    color: #fffffa;
+    text-decoration:none;
+    padding: 10px 10px;
+    line-height: normal;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Montserrat Alternates;
+    -webkit-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+header nav a:hover{
+    background-color: rgb(136, 113, 62);
+    border-radius: 50px;
+}
+
+.header2{
+    position: absolute;
+    height: 100px;
+}
+
+.header2 .logo{
+    margin-top: 10px;
+    line-height: 100px;
+    font-size: 30px;
+}
+
+.header2 nav{
+    line-height: 100px;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;  
+}
+
+.contenido{
+    padding-top: 125px;
+}
+
+.contenido p{
+    padding: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+    background-color: #b8995a6b;
+    font-size: large;
+    text-shadow: 0.1em 0.1em 0.2em #ffffff;
+    font-family: Montserrat Alternates;
+}
+
+/* aplicamos query para el inicio */
+
+@media screen and (min-width: 320px) and (max-width: 950px) {
+    header .logo,
+    header nav {
+        width: 100%;
+        text-align: center;
+        line-height: 100px;
+    }
+    .header2 {
+        height: auto;
+    }
+    .header2 .logo,
+    .header2 nav{
+        line-height: 50%;
+    }
+} 
+
+.linea{
+    background:rgb(136, 113, 62);
+    height: 5px;
+    width: 100%;
+    display: block;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    width: 60%;
+    margin: auto;
+    grid-gap: 10px;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.galeria img{
+    width: 100%;
+    vertical-align: top;
+    height: 200px;
+    object-fit: cover;
+}
+
+.galeria > a{ 
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.galeria a:hover img{
+    filter: blur(2px);
+    transform: rotate(10deg) scale(1.5);
+    transition: transform 0.5s;
+}
+
+.light-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    transition: transform .3s ease-in-out;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.light-box img{
+    width: 60vw;
+    max-height: 75vh;
+
+}
+
+.light-box:target{
+    transform: scale(1);
+}
+
+.close{
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background:#6e0505;
+    color: #fff;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.next{
+    display: block;
+    background: #6e0505;
+    color: #fff;
+    height: 30px;
+    width: 80px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* estilo a los footer para todos los html */
+.footer-contacto{
+    margin-top: 15%;
+}
+
+.footer-ubicacion{
+    margin-top: 7.5%;
+}
+
+.footer-nosotros{
+    margin-top: 15%;
+}
+
+.footer-vehiculos{
+    margin-top: 5%;
+}
+
+footer{
+    background-color: rgba(120,120,120, .5);
+    line-height: 3;
+    text-align: center;
+    width: 100%;
+    margin-top: 0%;
+    font-family: Montserrat Alternates;
+}
+
+footer .p{
+    line-height: 3;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+/*iniciamos con estilo de formulario de contacto*/
+
+.header2.header-contacto{
+    position: inherit;
+}
+
+.dejanos-tu-consulta{
+    font-size: x-large;
+    font-family: montserrat Alternates;
+    background-color:#b8995a6b;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 300px;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: rgba(204, 204, 204, 0.397);
+    margin-top: 95px;
+    margin-left: 42%;
+    box-shadow: 7px 13px 37px #000;
+}
+
+form label{
+	width:72px;
+	font-weight:bold;
+	display:inline-block;
+}
+
+form input[type="text"],
+form input[type="email"]{
+	width:180px;
+	padding:3px 10px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;
+	margin:8px 0;
+	display:inline-block;
+}
+
+form input[type="submit"]{
+	width:100%;
+	padding:8px 16px;
+	margin-top:32px;
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:#fff;
+	background-color:#000;
+} 
+
+form input[type="submit"]:hover{
+	cursor:pointer;
+}
+
+textarea{
+	width:100%;
+	height:100px;
+	border:1px solid #f6f6f6;
+	border-radius:3px;
+	background-color:#f6f6f6;			
+	margin:8px 0;
+	resize:none;
+	display:block;
+    font-family: Montserrat Alternates;
+}
+
+/* Aplicamos estilo al html Nosotros */
+
+.nosotros-historia{
+    padding: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+    background-color: #b8995a6b;
+    font-size: large;
+    text-shadow: 0.1em 0.1em 0.2em #ffffff;
+    font-family: Montserrat Alternates;
+}
+
+.nosotros-bio{
+    padding-top: 125px;
+    width: 90%;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;    
+}
+
+.nosotros-bio{
+    padding: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+    background-color: #b8995a6b;
+    font-size: large;
+    text-shadow: 0.1em 0.1em 0.2em #ffffff;
+    font-family: Montserrat Alternates;
+}
+
+.contenido-bio{
+    text-align: center;
+}
+
+.wrapper-video{
+    text-align: center;
+    margin-top: 5%;
+}
+
+/* Aplicamos estilo al html ubicacion */
+
+.main-ubicacion{
+    padding: 20px;
+    margin-bottom: 25px;
+    color: #000000;
+    background-color: #b8995a6b;
+    font-size: large;
+    text-shadow: 0.1em 0.1em 0.2em #ffffff;
+    font-family: Montserrat Alternates;
+    padding-top: 25px;
+    width: 15%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.google-maps{
+    padding-left: 34%;
+    padding-top: 5%;
+}
+
+/* Estilo para la tabla de info de vehiculos*/
+
+
+.tabla-vehiculos{
+    margin: 150px auto;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    width: 738px;
+    place-items: center;
+    color: #000000;
+    background-color: #b8995a6b;
+    font-size: large;
+    font-family: Montserrat Alternates;
+    text-align: center;
+}
+.titulo-tabla{
+    background-color: #252932;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media screen and (max-width: 390px) {
+    .tabla-vehiculos,
+    .titulo-tabla {
+        width: 100%;
+        text-align: center;
+        line-height: 100px;
+    }
+    tr {
+        height: auto;
+    }
+    th, td {
+        line-height: 50%;
+    }
+    header .logo,
+    header nav {
+        width: 100%;
+        text-align: center;
+        line-height: 100px;
+    }
+    .header2 {
+        height: auto;
+    }
+    .header2 .logo,
+    .header2 nav{
+        line-height: 50%;
+    }
+    .footer-vehiculos{
+        width: 100%;
+    }
+} 
+
+.nombre-vehiculo{
+    color: #000000;
+    text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+    background-color: #252932;
+    font-weight: bold;
+    font-size: large;
+    font-family: Montserrat Alternates;
+    text-align: center;
+    border-right: 25px;
+}
+
+/* Aplicamos Gird para las imagenes */
+
+.grid-main {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 1rem;
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.card-uno{
+    grid-row: 3 / 5;
+    grid-column: 4 / 8;
+}
+
+.card-dos {
+    grid-row: 1 / 3;
+    grid-column: 2 / 5;
+}
+
+.card-tres{
+    grid-row: 5 / 7;
+    grid-column: 2 / 5;
+}
+
+.card-cuatro{
+    grid-row: 1 / 3;
+    grid-column: 7 / 10; 
+}
+
+.card-cinco{
+    grid-row: 5 / 7;
+    grid-column: 7 / 10;
+}
+
+/* Aplicamos grid al html Nosotros */
+
+.logo .nav a{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
+}
+
+.header{
+    grid-row: 0 / -1;
+    grid-column: 1 / -1;
+    place-items: top;
+}
+
+.nosotros-historia{
+    display: grid;
+    grid-row: 2 / 10;
+    grid-column: 2 / 10;
+}
+
+/* Posicionamiento de iframe */
+.wrapper-video{
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.wrapper-video iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer dentro de un grid */
+.footer-nosotros{
+    display: grid;
+    grid-row: 5 / 6;
+    grid-column: 1 / 11;
+}
